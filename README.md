@@ -1,12 +1,85 @@
-# React + Vite
+# User Cards App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React application that fetches a list of users from a public API and displays them as animated cards with unique avatar images.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Live Demo
 
-## Expanding the ESLint configuration
+![Demo GIF](src/assets/demo.gif)
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features
+
+- Fetches users from `https://jsonplaceholder.typicode.com/users`
+- Displays users in stylish, hover-animated cards
+- Dynamic robot avatars from [robohash.org](https://robohash.org)
+- Hover animation with scaling and flipping effect 
+
+---
+
+## 🧱 Project Structure
+
+```
+src/
+├── App.jsx            # Main app logic, fetch & render users
+├── App.css            # Global styles
+├── components/
+│   └── User.jsx       # User card component
+public/
+└── index.html         # HTML entry
+```
+
+---
+
+## 🧑‍🎨 Avatar Images
+
+Each user's image is dynamically generated using:
+
+```
+https://robohash.org/{username}.png?set=set4
+```
+
+This creates a unique **cat avatar** (`set4`) for each user based on their name.
+
+---
+
+## 📦 Installation & Running
+
+```bash
+# Clone the repo
+git clone https://github.com/Shuaa-99/User-Cards-App
+cd User-Cards-App
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+# or
+npm start
+```
+
+Then open your browser at: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 📌 Notes
+
+- The `User` component receives a `user` object and renders:
+  - Name
+  - Email
+  - Username
+  - Avatar image
+- Animations are handled using simple CSS transitions
+- Styling is defined in `App.css` and component-level styles
+
+---
+
+## 🛠️ Technologies Used
+
+- ⚛️ React (with hooks)
+- 🧠 useState / useEffect
+- 🎨 CSS3
+- 🔗 JSONPlaceholder API
+- 🐱 Robohash.org avatars
